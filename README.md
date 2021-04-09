@@ -1,0 +1,2 @@
+This is a simple project developed using Python. The project is user convenient, to help them convert their height from one unit to another (feet to meter). It is a simple GUI-base project which is very easy to understand and use. Also, this project makes a convenient way for the user to gain an idea of how to perform conversion calculations.The user can simply enter the height value in the text fields and click ‘convert’ button.
+

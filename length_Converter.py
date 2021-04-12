@@ -1,6 +1,12 @@
 from tkinter import *
 from tkinter import ttk
 
+def convertunit():
+
+    value_input = unit_label.get()
+    value_output = result_label.get()
+    print(value_input, value_output)
+
 window = Tk()
 window.title("Length Conversion App")
 window.configure(background="light blue")
@@ -26,7 +32,7 @@ result_entry = Entry(window, textvariable="result_value", width=15)
 result_entry.grid(column=1, row=1, pady=30)
 result_entry.delete(0, "end")
 
-convert = Button(window, text="Convert", bg="blue", fg="white", width=10, command="")
+convert = Button(window, text="Convert", bg="blue", fg="white", width=10, command=convertunit)
 convert.grid(column=0, row=3, padx=15, pady=3)
 
 clear = Button(window, text="Clear", bg="grey", fg="white", width=10, command="")

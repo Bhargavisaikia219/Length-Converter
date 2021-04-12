@@ -15,6 +15,12 @@ def convertunit():
         result = value_input * input_ratio / output_ratio
         result_value.set("%.4f" % result)
 
+def delete():
+    unit_label.set("")
+    result_label.set("")
+    source_value.set("")
+    result_value.set("")
+
 window = Tk()
 window.title("Length Conversion App")
 window.configure(background="light blue")
@@ -24,7 +30,7 @@ window.resizable(width=False, height=False)
 length_unit = StringVar()
 unit_label = ttk.Combobox(window, textvariable=length_unit, width=15 )
 unit_label["value"] = ("millimeter", "centimeter", "meter", "kilometer", "inch", "feet", "yard", "mile")
-unit_label.grid(column=0, row=0, padx=35, pady=35)
+unit_label.grid(column=0, row=0, padx=35, pady=25)
 
 source_value = DoubleVar()
 source_value_entry = Entry(window, textvariable=source_value, width=15)
@@ -43,7 +49,7 @@ result_entry.delete(0, "end")
 convert = Button(window, text="Convert", bg="blue", fg="white", width=10, command=convertunit)
 convert.grid(column=0, row=3, padx=15, pady=3)
 
-clear = Button(window, text="Clear", bg="grey", fg="white", width=10, command="")
+clear = Button(window, text="Clear", bg="grey", fg="white", width=10, command=delete)
 clear.grid(column=1, row=3, padx=15, pady=3)
 
 window.mainloop()

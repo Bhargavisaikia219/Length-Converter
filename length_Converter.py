@@ -17,7 +17,7 @@ def convertunit():
         result = value_input * input_ratio / output_ratio       #convert length from one unit to another
         result_value.set("%.4f" % result)
 
-#declaring delete funciton to clear all widgets by pressing clear button
+#declaring delete funciton to clear all fields by pressing clear button
 def delete():
     unit_label.set("")          #sets an empty string
     result_label.set("")
@@ -33,11 +33,11 @@ window.resizable(width=False, height=False)     #freezes the window width and he
 
 #creating a drop-down list to select output unit, store the selected unit in length_unit
 length_unit = StringVar()                                                                                   #Holds a string; default value ""
-unit_label = ttk.Combobox(window, textvariable=length_unit, width=15 )                                      #label refers to the text widget to put any text or image
+unit_label = ttk.Combobox(window, textvariable=length_unit, width=15 )                                      #label refers to the textbox to put any text or image
 unit_label["value"] = ("millimeter", "centimeter", "meter", "kilometer", "inch", "feet", "yard", "mile")    #options to be appeared on the drop-down list
-unit_label.grid(column=0, row=0, padx=35, pady=25)                                                          #organizes a widget in a table-like structure
+unit_label.grid(column=0, row=0, padx=35, pady=25)                                                          #organizes a textbox in a table-like structure
 
-#to create a text widget to take input value
+#to create a textbox to take input value
 source_value = DoubleVar()                                                  #Holds a float; default value 0.0
 source_value_entry = Entry(window, textvariable=source_value, width=15)     #to input value entry from the user
 source_value_entry.grid(column=1, row=0, pady=25)
@@ -49,11 +49,11 @@ result_label = ttk.Combobox(window, textvariable=result_unit, width=15)
 result_label["value"] = ("millimeter", "centimeter", "meter", "kilometer", "inch", "feet", "yard", "mile")
 result_label.grid(column=0, row=1, padx=15, pady=30)
 
-#to create a text widget to display output value
+#to create a textbox to display output value
 result_value = DoubleVar()
 result_entry = Entry(window, textvariable=result_value, width=15)       #to display output entry
 result_entry.grid(column=1, row=1, pady=30)
-result_entry.delete(0, "end")                                           #deleting content from text widget
+result_entry.delete(0, "end")                                           #deleting content from textbox
 
 #To add covert and clear button
 convert = Button(window, text="Convert", bg="blue", fg="white", width=10, command=convertunit)      #command calls convertunit function
